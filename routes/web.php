@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BlogPostController@index');
+Route::get('/new-post', 'BlogPostController@showForm');
+Route::post('/new-post', 'BlogPostController@savePost');
+
+Route::get('/edit-post/{id}', 'BlogPostController@editPost');
+Route::post('/edit-post/{id}', 'BlogPostController@updatePost');
+
+Route::post('/delete-post/{id}', 'BlogPostController@deletePost');
