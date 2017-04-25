@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BlogPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogPostController extends Controller
 {
@@ -27,11 +28,12 @@ class BlogPostController extends Controller
     public function savePost(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|unique:posts|max:255',
+            'title' => 'required|unique:blog_posts|max:255',
             'content' => 'required',
         ]);
 
         $post = new BlogPost();
+        $post->user_id = Auth::guard()->user()->id;
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
@@ -49,7 +51,7 @@ class BlogPostController extends Controller
     public function updatePost($id, Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|unique:posts|max:255',
+            'title' => 'required|unique:blog_posts|max:255',
             'content' => 'required',
         ]);
 
