@@ -19,3 +19,7 @@ Route::get('/edit-post/{id}', 'BlogPostController@editPost');
 Route::post('/edit-post/{id}', 'BlogPostController@updatePost');
 
 Route::post('/delete-post/{id}', 'BlogPostController@deletePost');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
