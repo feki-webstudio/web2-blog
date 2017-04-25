@@ -1,12 +1,4 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext');
-
-// Variables
-@import "variables";
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
+//<link rel="stylesheet" type="text/css" href="{{ elixir('css/app.css') }}">
 header {
   background: $brand-primary;
   color: white;
@@ -19,7 +11,6 @@ header {
     font-weight: normal;
   }
 }
-
 
 article{
   border-bottom: 1px solid grey;
@@ -43,9 +34,7 @@ footer{
   color: white;
 }
 
-
 form{
   @include clearfix();
   margin-bottom: 30px;
 }
-

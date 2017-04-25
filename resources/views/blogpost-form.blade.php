@@ -8,17 +8,24 @@
         method="POST" action="/new-post"
         @endif
     >
+        @if ($post->exists)
+            <h1>Cikk szerkesztése</h1>
+        @else
+            <h1>Cikk felvitele</h1>
+        @endif
+
         {{ csrf_field() }}
-        <div>
+        <div class="form-group">
             <label for="title">Cím</label>
-            <input type="text" name="title" value="{{ $post->title }}">
+            <input class="form-control" type="text" name="title" value="{{ $post->title }}">
         </div>
-        <div>
+        <div class="form-group">
             <label for="content">Tartalom</label>
-            <textarea name="content">{{ $post->content }}</textarea>
+            <textarea class="form-control" name="content">{{ $post->content }}</textarea>
         </div>
         <div>
-            <button type="submit">Elküldés</button>
+            <a href="/" class="btn btn-default">mégsem</a>
+            <button class="btn btn-success pull-right" type="submit">Mentés</button>
         </div>
     </form>
 @endsection
