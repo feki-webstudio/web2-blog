@@ -26,6 +26,11 @@ class BlogPostController extends Controller
 
     public function savePost(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|unique:posts|max:255',
+            'content' => 'required',
+        ]);
+
         $post = new BlogPost();
         $post->title = $request->title;
         $post->content = $request->content;
@@ -43,6 +48,11 @@ class BlogPostController extends Controller
 
     public function updatePost($id, Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|unique:posts|max:255',
+            'content' => 'required',
+        ]);
+
         $post = BlogPost::findOrFail($id);
         $post->title = $request->title;
         $post->content = $request->content;
