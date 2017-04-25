@@ -80,7 +80,7 @@
 </nav>
 
 <div class="container">
-    <header><h1>Ez a blogunk</h1></header>
+    {{--<header><h1>Ez a blogunk</h1></header>--}}
 
     @yield('body')
 

@@ -12,14 +12,17 @@
 */
 
 Route::get('/', 'BlogPostController@index');
-Route::get('/new-post', 'BlogPostController@showForm');
-Route::post('/new-post', 'BlogPostController@savePost');
 
-Route::get('/edit-post/{id}', 'BlogPostController@editPost');
-Route::post('/edit-post/{id}', 'BlogPostController@updatePost');
+Route::group(['middleware' => ['auth']], function (){
 
-Route::post('/delete-post/{id}', 'BlogPostController@deletePost');
+    Route::get('/new-post', 'BlogPostController@showForm');
+    Route::post('/new-post', 'BlogPostController@savePost');
+
+    Route::get('/edit-post/{id}', 'BlogPostController@editPost');
+    Route::post('/edit-post/{id}', 'BlogPostController@updatePost');
+
+    Route::post('/delete-post/{id}', 'BlogPostController@deletePost');
+
+});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
