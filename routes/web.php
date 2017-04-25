@@ -23,6 +23,8 @@ Route::group(['middleware' => ['auth']], function (){
 
     Route::post('/delete-post/{id}', 'BlogPostController@deletePost');
 
+    Route::post('/new-comment', 'CommentController@saveComment');
+
 });
 
 Auth::routes();
