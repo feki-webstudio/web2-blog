@@ -91,5 +91,26 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    $('.comment-form form').submit(function (e) {
+        e.preventDefault();
+
+        var this_form = $(this);
+        var comment = $(this).find('input.comment').val();
+        var new_comment = '<li><strong>{{Auth::user()->name}}:</strong>'+comment+'</li>'
+
+        $.ajax({
+            url: this_form.attr('action'),
+            type: 'POST',
+            data: this_form.serialize(),
+            success: function (data) {
+                this_form.parent().parent().find('ul.comments').append(new_comment);
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

@@ -23,24 +23,23 @@
                 {{ $post->content }}
             </p>
 
-            @if($post->comments->count() > 0)
-                <ul class="comments">
-                    @foreach($post->comments as $comment)
-                        <li><strong>{{$comment->user->name}}:</strong> {{$comment->content}}</li>
-                    @endforeach
-                </ul>
-            @endif
+            <ul class="comments">
+                @foreach($post->comments as $comment)
+                    <li><strong>{{$comment->user->name}}:</strong> {{$comment->content}}</li>
+                @endforeach
+            </ul>
 
             @if(Auth::check())
 
-                <div>
-                    <form action="/new-comment"
+                <div class="comment-form">
+                    <form action="/api/comments"
                           method="POST">
                         {{ csrf_field() }}
                         <input type="hidden" name="blog_post_id" value="{{$post->id}}">
+                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 
                         <div class="form-group">
-                            <input type="text" class="form-control" name="content" placeholder="Szólj hozzá...">
+                            <input type="text" class="form-control comment" name="content" placeholder="Szólj hozzá...">
                         </div>
 
                         <button type="submit" class="btn btn-primary pull-right"><i
