@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Comment;
+use App\BlogPost;
 use Illuminate\Http\Request;
 
-class ApiCommentController extends Controller
+class ApiPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ApiCommentController extends Controller
      */
     public function index()
     {
-        return Comment::all();
+        return BlogPost::with('user', 'comments', 'comments.user')->orderBy('id', 'desc')->get();
     }
 
     /**
@@ -35,13 +35,7 @@ class ApiCommentController extends Controller
      */
     public function store(Request $request)
     {
-        $comment = new Comment();
-        $comment->user_id = $request->user_id;
-        $comment->blog_post_id = $request->blog_post_id;
-        $comment->content = $request->content;
-        $comment->save();
 
-        return Comment::where('blog_post_id', $request->blog_post_id)->with('user')->orderBy('id', 'desc')->get();
     }
 
     /**
@@ -52,7 +46,7 @@ class ApiCommentController extends Controller
      */
     public function show($id)
     {
-        return Comment::findOrFail($id);
+
     }
 
     /**
@@ -75,12 +69,7 @@ class ApiCommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $comment = Comment::findOrFail($id);
 
-        $comment->user_id = $request->user_id;
-        $comment->blog_post_id = $request->blog_post_id;
-        $comment->content = $request->content;
-        $comment->save();
     }
 
     /**
@@ -91,6 +80,6 @@ class ApiCommentController extends Controller
      */
     public function destroy($id)
     {
-        Comment::destroy($id);
+
     }
 }

@@ -28,5 +28,6 @@ Route::group(['middleware' => ['auth']], function (){
 });
 
 Route::resource('/api/comments', 'ApiCommentController');
+Route::resource('/api/posts', 'ApiPostController');
 
 Auth::routes();
