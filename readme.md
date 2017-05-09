@@ -1,5 +1,7 @@
 # Blog
 
+- Agilitás és Scrum
+https://1drv.ms/p/s!AgwT3-ayQIY8bvaeb3nK1yDPsNU
 - Első előadás ppt: 
 http://go.nxu.hu/epitsunk-blogot-1
 - Laravel telepítés: 
