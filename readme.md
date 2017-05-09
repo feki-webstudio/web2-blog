@@ -16,3 +16,7 @@ https://1drv.ms/p/s!AhqcWJx5Bux6gRx077HiIAUGKxh3
    https://onedrive.live.com/view.aspx?resid=B21D25F83F3D6AF7!59072&ithint=file,pptx&app=PowerPoint&authkey=!AAdw5sSmSVxZb5M
    - II. rész, JavaScript, jQuery, AJAX ppt:
    https://1drv.ms/p/s!AhqcWJx5Bux6gSF-K17s8TwOv0gU
+
+- Ötödik előadás
+https://1drv.ms/p/s!AgwT3-ayQIY8bC0TbYpojPBnwTg
++ forráskód https://github.com/feki-webstudio/web2-blogapp
