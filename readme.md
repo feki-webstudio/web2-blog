@@ -18,5 +18,4 @@ https://1drv.ms/p/s!AhqcWJx5Bux6gRx077HiIAUGKxh3
    https://1drv.ms/p/s!AhqcWJx5Bux6gSF-K17s8TwOv0gU
 
 - Ötödik előadás
-https://1drv.ms/p/s!AgwT3-ayQIY8bC0TbYpojPBnwTg
-+ forráskód https://github.com/feki-webstudio/web2-blogapp
+https://1drv.ms/p/s!AgwT3-ayQIY8bC0TbYpojPBnwTg + forráskód https://github.com/feki-webstudio/web2-blogapp
